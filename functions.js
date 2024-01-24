@@ -44,9 +44,26 @@ function comprova(){
             document.getElementById(id).className = "slot";
         }
     }
+    //Comprovació de si hi ha lletres repetides per avisar-te.
+    let repetit = 0;
+    for (i=1;i<resposta.length+1;i++){
+        if (paraula.includes(resposta.charAt(i-1))){
+            for (o=1;o<resposta.length+1;o++){
+                if (resposta.charAt(i-1)==paraula.charAt(o-1)){
+                    repetit++;
+                }
+            }
+        }
+    }
     //Fa els intents. Compta enrera dels intents per saber quants et queden.
     let intents= 5-count;
-    document.getElementById("pista").innerHTML = "Pista: Tens " + intents + " intents.";
+    //Mecanisme que pinta dins pistes si una de les lletres que tens està repetida dins la paraula. No et diu quina per més dificultat.
+    if (repetit>0){
+        repetit = " Una d'aquestes lletres és repetida.";
+    }else{
+        repetit = "";
+    }
+    document.getElementById("pista").innerHTML = "Pista: Tens " + intents + " intents." + repetit;
     //Comprovació de si has guanyat.
     if(resposta==paraula){
         document.getElementById("boton").hidden = "true";
