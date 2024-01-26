@@ -46,24 +46,29 @@ function comprova(){
     }
     //Comprovació de si hi ha lletres repetides per avisar-te.
     let repetit = 0;
+    let repetitconfirm = 0;
+    let repetirtext= "";
     for (i=1;i<resposta.length+1;i++){
         if (paraula.includes(resposta.charAt(i-1))){
+            repetit = 0;
             for (o=1;o<resposta.length+1;o++){
                 if (resposta.charAt(i-1)==paraula.charAt(o-1)){
                     repetit++;
                 }
             }
+            //Mecanisme que indica que hi ha una repetida.
+            if (repetit>1) {
+                repetitconfirm = 1;
+            }
         }
+    }
+    //Mecanisme que pinta els repetits correctament per posar-los a les pistes.
+    if (repetitconfirm==1){
+        repetirtext = " Una d'aquestes lletres és repetida dins la paraula.";
     }
     //Fa els intents. Compta enrera dels intents per saber quants et queden.
     let intents= 5-count;
-    //Mecanisme que pinta dins pistes si una de les lletres que tens està repetida dins la paraula. No et diu quina per més dificultat.
-    if (repetit>0){
-        repetit = " Una d'aquestes lletres és repetida.";
-    }else{
-        repetit = "";
-    }
-    document.getElementById("pista").innerHTML = "Pista: Tens " + intents + " intents." + repetit;
+    document.getElementById("pista").innerHTML = "Pista: Tens " + intents + " intents." + repetirtext;
     //Comprovació de si has guanyat.
     if(resposta==paraula){
         document.getElementById("boton").hidden = "true";
