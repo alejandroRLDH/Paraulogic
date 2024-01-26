@@ -6,7 +6,7 @@ function send(){
     //Agafa la resposta i es posa en majúscula per poder usarla.
     let resposta = document.getElementById('resposta').value;
     resposta = resposta.toUpperCase();
-    if (resposta.length==7){
+    if (resposta.length==paraula.length){
         //Es quita l'alerta que diu que no té lletres correctes, i suma un al comptador d'intents.
         document.getElementById('no').hidden = true;
         count++;
@@ -21,11 +21,12 @@ function send(){
         //Mecanisme de perdre si has arribat al màxim.
         if(count==5){
             document.getElementById("boton").hidden = "true";
-            document.getElementById("pista").innerHTML = "Mala sort. :/";
+            document.getElementById("pista").innerHTML = "Mala sort :/. La resposta era: " + paraula;
             window.alert("Has perdut!");
         }
     }else{
     //Alerta al no tenir nombre de lletres correctes.
+    document.getElementById('no').innerHTML = "Aquesta resposta no té " + paraula.length + " lletres.";
     document.getElementById('no').hidden = false;
     }
 }
