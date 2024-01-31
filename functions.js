@@ -1,6 +1,11 @@
 // Es determinen la paraula i un comptador d'intents.
-const paraula = "BAZINGA"
-let count = 0
+let paraula = ["BAZINGA", "RATON", "MIQUEL", "ORDENADOR", "PISO", "PIEZA", "SHELDON", "CASA", "JUEGO", "MAPA", "TRONCO", "TEORIA", "GRANDE", "MUERTO", "BALDOSA", "CARAMELO", "LUZ", "PARED", "CAMISA", "TRUENO", "PUERTA", "MONO", "ORNITORRINGO", "MARIA", "MAR", "REMO", "SUELO"];
+paraula = paraula[Math.trunc(Math.random() * paraula.length)];
+let count = 0;
+//Es posa la llargària de la paraula a les pistes.
+addEventListener("DOMContentLoaded", (event)=>{
+    document.getElementById("pista").innerHTML = "Pista: Té " + paraula.length + " lletres."
+});
 
 function send(){
     //Agafa la resposta i es posa en majúscula per poder usarla.
