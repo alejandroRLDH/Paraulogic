@@ -1,5 +1,5 @@
 // Es determinen la paraula i un comptador d'intents.
-let paraula = ["BAZINGA", "RATON", "MIQUEL", "ORDENADOR", "PISO", "PIEZA", "SHELDON", "CASA", "JUEGO", "MAPA", "TRONCO", "TEORIA", "GRANDE", "MUERTO", "BALDOSA", "CARAMELO", "LUZ", "PARED", "CAMISA", "TRUENO", "PUERTA", "MONO", "ORNITORRINGO", "MARIA", "MAR", "REMO", "SUELO"];
+let paraula = ["BAZINGA", "RATON", "MIQUEL", "ORDENADOR", "PISO", "PIEZA", "SHELDON", "CASA", "JUEGO", "MAPA", "TRONCO", "TEORIA", "GRANDE", "MUERTO", "BALDOSA", "CARAMELO", "LUZ", "PARED", "CAMISA", "TRUENO", "PUERTA", "MONO", "ORNITORRINGO", "MARIA", "MAR", "REMO", "SUELO", "MUNDO", "SOL", "ESTERNOCLEIDOMASTOIDEO", "DURACION", "CARAMELO", "OPIO", "LIMA", "MELON", "LIMON", "ESTRELLA", "SILLA", "JAUME", "CERDO", "CANCION", "PALABRA", "CHAQUETA", "AZUL", "NO", "FLOR", "MUSICA", "RITMO", "DISCO", "CIRCULO", "REPETIR"];
 paraula = paraula[Math.trunc(Math.random() * paraula.length)];
 let count = 0;
 //Es posa la llargària de la paraula a les pistes.
